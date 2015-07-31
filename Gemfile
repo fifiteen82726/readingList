@@ -46,5 +46,8 @@ group :development, :test do
 #bootstrap
 gem 'bootstrap-sass', '~> 3.3.5'
 
+#Heroku
+gem 'rails_12factor', group: :production
+
 
 end
