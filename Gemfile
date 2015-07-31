@@ -43,11 +43,9 @@ group :development, :test do
   gem 'spring'
 
 
-#bootstrap
-gem 'bootstrap-sass', '~> 3.3.5'
-
 #Heroku
 gem 'rails_12factor', group: :production
 
+ruby "2.1.3"
 
 end
