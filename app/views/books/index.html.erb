@@ -1,0 +1,106 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>
+      Reading List
+      </h3>
+      <!-- Standard button -->
+      <button type="button" class="btn btn-default">Default</button>
+
+      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+      <button type="button" class="btn btn-primary">Primary</button>
+
+      <!-- Indicates a successful or positive action -->
+      <button type="button" class="btn btn-success">Success</button>
+
+      <!-- Contextual button for informational alert messages -->
+      <button type="button" class="btn btn-info">Info</button>
+
+      <!-- Indicates caution should be taken with this action -->
+      <button type="button" class="btn btn-warning">Warning</button>
+
+      <!-- Indicates a dangerous or potentially negative action -->
+      <button type="button" class="btn btn-danger">Danger</button>
+
+      <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+      <button type="button" class="btn btn-link">Link</button>
+      <ol class="breadcrumb">
+        <li class ="active">Home</li>
+      </ol>
+
+      <div class="row">
+        <div class="col-xs-4">
+
+        </div>
+      </div>
+
+
+
+
+      <div class="row">
+        <% @books.each do |book| %>
+
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-4">
+              <%= image_from_amazon(book.amazon_id) %>
+            </div>
+            <div class="col-md-8">
+                <h4>
+                   <%= book.title %>
+                </h4>
+                 <br>
+                <p>
+                    <%= book.auther %>
+                </p>
+                <br>
+                <p>
+                    <%= book.description %>
+                </p>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+        </div>
+
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Auther</th>
+      <th>Description</th>
+      <th>Amazon</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @books.each do |book| %>
+      <tr class = <%= "finished" if book.finished? %> >
+        <td><%= book.title %></td>
+        <td><%= book.auther %></td>
+        <td><%= book.description %></td>
+        <!-- <td><%= book.amazon_id %></td> -->
+        <td><%= image_from_amazon(book.amazon_id) %></td>
+        <td><%= link_to 'Show', book %></td>
+        <td><%= link_to 'Edit', edit_book_path(book) %></td>
+        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Book', new_book_path %>
