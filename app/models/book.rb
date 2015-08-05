@@ -1,7 +1,7 @@
 class Book < ActiveRecord::Base
 
-	belongs_to :genre 
-
+	has_many :book_genres
+	has_many :genres, through: :book_genres
 
 	scope :finished, ->{ where('finished_on IS NOT NULL') }
 	#scope :recent, ->{ where('finished_on > ?', 2.days.ago) }
