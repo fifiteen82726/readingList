@@ -23,6 +23,8 @@
       </form>
       </div>
 
+      <br>
+      <div class="clearfix"></div>
 
 
 
@@ -30,7 +32,11 @@
         <% @books.each do |book| %>
 
         <div class="col-md-8">
+        
           <div class="row">
+            <ul>
+                
+
             <div class="col-md-4">
               <%= image_from_amazon(book.amazon_id) %>
             </div>
@@ -48,6 +54,8 @@
                 </p>
 
             </div>
+         
+            </ul>
           </div>
         </div>
         <div class="col-md-4">
