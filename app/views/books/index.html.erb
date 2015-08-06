@@ -84,6 +84,16 @@
           <div class="col-md-4">
               <h3>Genre (Click to filter books)</h3>
               <br>
+             <li>
+             <span class = 'label label-danger'>
+            
+              <%= link_to "No filter" ,books_path, style: 'color:#FFFFFD' %>
+
+             </span>
+             <br>
+             <br>
+             </li>
+
               <% @genres.each do |genres| %>
               <li>
                 <span class = 'label label-primary'  style="color:#FFFFFD">
@@ -97,6 +107,7 @@
               <br>
               
               <% end %>
+
 
           </div>
         </div>
