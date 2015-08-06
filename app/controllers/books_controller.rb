@@ -6,6 +6,7 @@ class BooksController < ApplicationController
   def index
     #@books = Book.where(title: params[:keyword])
     @books = Book.search(params[:keyword])
+    @genres = Genre.all
   end
 
   # GET /books/1

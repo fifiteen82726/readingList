@@ -25,6 +25,9 @@
         <p></p>
         </div>
       </form>
+
+
+
       </div>
     </div>
       <br>
@@ -37,14 +40,14 @@
     <div class="clearfix">
 
 
-
-    
-        <% @books.each do |book| %>
+  <div class="col-md-12">
+      
+        
 
         <div class="col-md-8">
-        
+        <% @books.each do |book| %>
           <div class="row">
-            <ul>
+           
             <div class="col-md-4">
               <%= image_from_amazon(book.amazon_id) %>
             </div>
@@ -62,19 +65,49 @@
                 <p>
                     <%= book.description %>
                 </p>
-
-            </div>
+                
+                 
+                <% book.genres.each do |genres| %> 
+                    <span class="label label-primary">
+                     <%= genres.name %> 
+                    </span>
+                    &nbsp
+                <% end %>
+              </div>
          
-            </ul>
+          
+          
+           </div>
+        
+        <% end %>
+        </div>
+          <div class="col-md-4">
+              <h3>Genre (Click to filter books)</h3>
+              <br>
+              <% @genres.each do |genres| %>
+              <li>
+                <span class = 'label label-primary'  style="color:#FFFFFD">
+                  <%#= genres.name %>
+                  <%#= link_to genres.name, books_path(filter: genres.id), class : 'label label-primary' %>
+                  <%= link_to genres.name ,books_path,style: 'color:#FFFFFD' %>
+
+                </span>
+
+              </li>
+              <br>
+              
+              <% end %>
+
           </div>
         </div>
-        <div class="col-md-4">
-        </div>
 
 
-        <% end %>
+<!-- clearfix -->
+ </div>
+        
+        
       </div>
       </div>
     </div>
-</div>
+
 
