@@ -3,9 +3,9 @@
 <div class="container">
   
     <div class="col-md-12">
-      <h3>
+      <h2>
       Reading List
-      </h3>
+      </h2>
      
       <ol class="breadcrumb">
         <li class ="active">Home</li>
@@ -89,7 +89,7 @@
                 <span class = 'label label-primary'  style="color:#FFFFFD">
                   <%#= genres.name %>
                   <%#= link_to genres.name, books_path(filter: genres.id), class : 'label label-primary' %>
-                  <%= link_to genres.name ,books_path,style: 'color:#FFFFFD' %>
+                  <%= link_to genres.name ,books_path(filter: genres.name),style: 'color:#FFFFFD' %>
 
                 </span>
 
