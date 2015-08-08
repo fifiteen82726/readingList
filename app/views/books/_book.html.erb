@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-md-4">
+        <%= image_from_amazon(book.amazon_id) %>
+    </div>
+    <div class="col-md-8">
+        <h3 class = "text-info">
+            <%= book.title %>
+        </h3>
+        <br>
+        <em class ="text-muted">
+            written by <%= book.author %>
+        </em>
+        <br>
+        <br>
+        <p>
+            <%= book.description %>
+        </p>
+        <% book.genres.each do |genres| %> 
+        <span class="label label-primary">
+            <%= genres.name %> 
+        </span>
+        &nbsp
+        <% end %>
+    </div>
+</div>
