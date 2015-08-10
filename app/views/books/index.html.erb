@@ -1,20 +1,11 @@
 <div class="container">
-  
     <div class="col-md-12">
       <h2>
       Reading List
       </h2>
-     
       <ol class="breadcrumb">
         <li class ="active">Home</li>
       </ol>
-    
-      <!-- <div class="row">
-        <div class="col-xs-4">
-
-        </div>
-      </div> -->
-
       <div class="col-md-12">
        <form>
         <legend>Search Books</legend>
@@ -24,7 +15,7 @@
         </div>
         <p class = 'pull-right'>
           <a href="#">
-            <button type="button" class="btn btn-primary">Default</button>
+            <button type="button" id ='show-form' class="btn btn-primary">Default</button>
           </a>
         </p>
       </form>
@@ -32,21 +23,20 @@
       </div>
     </div>
 
+
+  <div class="col-md-12 book-form">
     <div class="col-md-5">
       <!-- <form class="form-horizontal"> -->
-         <%= form_for(Book.new, remote: true, html: { class: 'horizontal-form'}) do |f| %>
+         <%= form_for(Book.new, remote: true, html: { class: 'horizontal-form '}) do |f| %>
         <%#= form_for(Book.new, remote: true, html: { class: 'horizontal-form' }) do |f| %>
       <legend>New Book</legend>
    <div class="form-group">
     <label class="col-sm-2 control-label">Genre</label>
     <div class="col-sm-10">
       <!-- <input type="email" class="form-control" id="inputEmail3" placeholder="Email"> -->
-      <%= f.select :genres, @genres.map {|g| [g.name, g.id]},{},{multiple: true} %>
-
-      <%#= f.collection_select(:genres, Genre.all, :id, :name, ) %>
-      
-      <%#= select("post", "person_id", Genre.all.collect {|p| [ p.name, p.id ] }, {include_blank: 'None'},{multiple: true}) %>
-
+      <%#= f.select :genres, @genres.map {|g| [g.name, g.id]},{},{multiple: true} %>
+       <%= f.select :genre_ids, @genres.map {|g| [g.name, g.id]},{},{multiple: true} %>
+  
     </div> 
   </div>
   <div class="form-group">
@@ -78,31 +68,14 @@
     <% end %>
   
   </div>
-<%#= radio_button_tag(:title, "child") %>
-    <div class='form-group'>
-          <legend>Rating</legend>
-          <% (1..5).each do |rating| %>
-            <label class='radio-inline'>
-              <%= rating %> <!--1,2,3,4,5 -->
-              <!-- value 1,2,3,4,5 -->
-              <%= f.radio_button :rating, rating %>
-            </label>
-          <% end %>
-        </div>
-
-
-
  <div class='form-group'>
           <%= f.submit class: 'btn btn-primary' %>
         </div>
 <% end %>
     </div>
-
-
-
-
-      <br><br><br><br><br>
-
+    </div>
+      
+     
     <div class="clearfix">
    <div class="col-md-12">
     <div class="col-md-8">
@@ -130,11 +103,8 @@
           </div>
         </div>
 <!-- clearfix -->
- </div>
-        
-        
+ </div> 
       </div>
-      </div>
-    </div>
+      
 
 

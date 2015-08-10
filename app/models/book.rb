@@ -25,19 +25,8 @@ class Book < ActiveRecord::Base
 
 
 	protected
-	def set_keywords
-		#self.keywords = [ title, author, description].map {|p|.downcase}.join(' ')
-		self.keywords = [title, author, description].map(&:downcase).join(' ')
-		
-	end
-	# def self.search(keyword) 
-	# 	if keyword.present?
-	# 		where(title: keyword)
-	# 	else 
-	# 		self.all 
-	# 	end
-
-
-		
-	# end
+    def set_keywords
+      self.keywords = [title, author, description].map(&:downcase).join(' ')
+    end
 end
+
