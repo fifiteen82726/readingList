@@ -43,9 +43,8 @@ group :development, :test do
   gem 'spring'
 
 
+end
+
+
 #Heroku
 gem 'rails_12factor', group: :production
-
-ruby "2.1.3"
-
-end
