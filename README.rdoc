@@ -9,3 +9,6 @@ Things you may want to cover:
 
 The goal of this project is create muliple relationship model, 
 and make users easily add new book into Readinglist.
+
+User can use this app to add new books, search books to achieve a dream reading list.
+Furthermore, I use multiple relationship databases, pass data by ajax, and use bootstrap as css framework.
